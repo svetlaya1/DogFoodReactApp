@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/DogFoodReactApp/static/css/main.41ca71eb.css",
-    "main.js": "/DogFoodReactApp/static/js/main.227dbfd8.js",
-    "static/media/logo.png": "/DogFoodReactApp/static/media/logo.6adc00855cf49539c402.png",
-    "static/media/whatsapp.png": "/DogFoodReactApp/static/media/whatsapp.f7c4b70a96a452ebde4d.png",
-    "static/media/instagram.png": "/DogFoodReactApp/static/media/instagram.3dcee5232493ab88f582.png",
-    "static/media/viber.png": "/DogFoodReactApp/static/media/viber.8066f77b18fa77a7c05d.png",
-    "static/media/favorites.png": "/DogFoodReactApp/static/media/favorites.688884f080d473a545b3.png",
-    "static/media/vk.png": "/DogFoodReactApp/static/media/vk.567fdc08ecf541bf1c69.png",
-    "static/media/cart.png": "/DogFoodReactApp/static/media/cart.f2cd9a6b4de9e4ae612f.png",
-    "index.html": "/DogFoodReactApp/index.html",
-    "main.41ca71eb.css.map": "/DogFoodReactApp/static/css/main.41ca71eb.css.map",
-    "main.227dbfd8.js.map": "/DogFoodReactApp/static/js/main.227dbfd8.js.map"
+    "main.css": "../dogfood/static/css/main.41ca71eb.css",
+    "main.js": "../dogfood/static/js/main.02cf3306.js",
+    "static/media/logo.png": "../dogfood/static/media/logo.6adc00855cf49539c402.png",
+    "static/media/whatsapp.png": "../dogfood/static/media/whatsapp.f7c4b70a96a452ebde4d.png",
+    "static/media/instagram.png": "../dogfood/static/media/instagram.3dcee5232493ab88f582.png",
+    "static/media/viber.png": "../dogfood/static/media/viber.8066f77b18fa77a7c05d.png",
+    "static/media/favorites.png": "../dogfood/static/media/favorites.688884f080d473a545b3.png",
+    "static/media/vk.png": "../dogfood/static/media/vk.567fdc08ecf541bf1c69.png",
+    "static/media/cart.png": "../dogfood/static/media/cart.f2cd9a6b4de9e4ae612f.png",
+    "index.html": "../dogfood/index.html",
+    "main.41ca71eb.css.map": "../dogfood/static/css/main.41ca71eb.css.map",
+    "main.02cf3306.js.map": "../dogfood/static/js/main.02cf3306.js.map"
   },
   "entrypoints": [
     "static/css/main.41ca71eb.css",
-    "static/js/main.227dbfd8.js"
+    "static/js/main.02cf3306.js"
   ]
 }
