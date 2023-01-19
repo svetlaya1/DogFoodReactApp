@@ -34,11 +34,11 @@ const myRouter = createBrowserRouter([
       }
     ]
   }
-])
+], { basename: "/DogFoodReactApp" })
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
-    <RouterProvider basename="/DogFoodReactApp" router={myRouter} />
+    <RouterProvider router={myRouter} />
   </React.StrictMode>,
 )
