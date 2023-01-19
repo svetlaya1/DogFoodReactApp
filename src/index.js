@@ -39,6 +39,6 @@ const myRouter = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
-    <RouterProvider router={myRouter} />
+    <RouterProvider basename="/DogFoodReactApp" router={myRouter} />
   </React.StrictMode>,
 )
