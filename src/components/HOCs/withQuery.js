@@ -1,16 +1,22 @@
 /* eslint-disable */
-export const withQuery = (WrappedComponent) => function ({ isError, error, ...rest }) {
-  if (isError) {
-    return (
-      <>
-        <WrappedComponent {...rest} />
-        <div className="errorMessage">
-          {error.message}
+import { Loader } from "../Loader/Loader"
+
+// eslint-disable-next-line react/display-name
+export const withQuery =
+  (WrappedComponent) =>
+  ({ isLoading, isError, error, refetch, ...rest }) => {
+    if (isError) {
+      return (
+        <div>
+          <p>Ошибка: {error.message}</p>
+          <button onClick={refetch} type="button">
+            Повторить запрос
+          </button>
         </div>
-      </>
-    );
+      )
+    }
+
+    if (isLoading) return <Loader />
+
+    return <WrappedComponent {...rest} />
   }
-  return (
-    <WrappedComponent {...rest} />
-  );
-};

@@ -1,24 +1,30 @@
 /* eslint-disable */
 
 
-import { useState, useEffect,createContext } from "react";
-import { dogFoodApi } from '../api/DogFoodApi';
+import { useCallback, useEffect, useState, createContext } from "react"
 
+export const AppContext = createContext()
 
-export const AppContext = createContext();
-export function AppContextProvider({ children }) {
-    const [token, setToken] = useState(() => {
-        const tokenFromLS = localStorage.getItem('token');
-        return tokenFromLS || '';
-    });
-    useEffect(() => {
-        localStorage.setItem('token', token);
-        dogFoodApi.setToken(token);
-    }, [token]);
+const DOGSHOP_LS_KEY = "DOGSHOP_LS_KEY"
 
-    return (
-        <AppContext.Provider value={{ token, setToken }}>
-            {children}
-        </AppContext.Provider>
-    );
+// eslint-disable-next-line react/prop-types
+export const AppContextProvider = ({ children }) => {
+  const [token, setToken] = useState(() => {
+    const tokenFromLS = localStorage.getItem(DOGSHOP_LS_KEY)
+    const preparedData = tokenFromLS ? JSON.parse(tokenFromLS) : []
+
+    return preparedData
+  })
+
+  useEffect(() => {
+    localStorage.setItem(DOGSHOP_LS_KEY, JSON.stringify(token))
+  }, [token])
+
+  const removeToken = useCallback(() => setToken(""), [setToken])
+
+  return (
+    <AppContext.Provider value={{ token, setToken, removeToken }}>
+      {children}
+    </AppContext.Provider>
+  )
 }

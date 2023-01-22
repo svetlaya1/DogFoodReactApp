@@ -4,7 +4,9 @@ import signupStyles from './signuppage.module.css'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import { createTodoFormValidationSchema } from './validator'
 import { useMutation } from '@tanstack/react-query'
-import { useNavigate } from 'react-router-dom'
+import { Route, useNavigate } from 'react-router-dom'
+import { SignupPageErr } from './SignupPageErr'
+
 
 const initialValues = {
     email: '',
@@ -22,7 +24,11 @@ export function SignupPage() {
         'Content-type': 'application/json',
       },
       body: JSON.stringify(data),
-    }).then((res) => res.json()),
+    }).then((res) => {
+      if (res.status > 299) {
+        navigate(`/signup/error`)
+      } else navigate(`/signin`)
+    })
   })
 
   const submitHandler = async (values) => {
@@ -30,7 +36,6 @@ export function SignupPage() {
 
     await mutateAsync(values)
 
-    navigate(`/signin`)
   }
   
   return (

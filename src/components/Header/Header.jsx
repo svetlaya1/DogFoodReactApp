@@ -5,8 +5,15 @@ import headerStyles from './header.module.css'
 import logoImg from './logo.png'
 import favoritestImg from './favorites.png'
 import cartImg from './cart.png'
+import { useContext } from 'react'
+import { AppContext } from '../../contexts/AppContextProvider';
 
 export const Header = () => {
+
+    const {setToken} = useContext(AppContext);
+    function signoutHandler() {
+        setToken('');
+    }
 
   return (
     <header className={headerStyles.wr}>
@@ -37,6 +44,10 @@ export const Header = () => {
 
                 <Link className={headerStyles.link} to="/signin">
                     <p className={headerStyles.sign}>Вход</p>
+                </Link>
+
+                <Link onClick={signoutHandler} className={headerStyles.link} to="/">
+                    <p className={headerStyles.sign}>Выход</p>
                 </Link>
                 
                 <Link className={headerStyles.link} to="/signup">

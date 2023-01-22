@@ -10,7 +10,8 @@ import { SignupPage } from './components/Pages/SignupPage/SignupPage'
 import { SigninPage } from './components/Pages/SigninPage/SigninPage'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { Goods } from './components/Pages/Goods/Goods'
-//import { SigninMemo as SigninPage } from './components/Pages/SigninPage/SigninPage';
+import { AppContextProvider } from './contexts/AppContextProvider'
+import { SignupPageErr } from './components/Pages/SignupPage/SignupPageErr'
 
 
 const myRouter = createBrowserRouter([
@@ -27,8 +28,12 @@ const myRouter = createBrowserRouter([
         element: <Goods />,
       },
       {
-        path: 'signup',
+        path: 'signup/',
         element: <SignupPage />,
+      },
+      {
+        path: 'signup/error',
+        element: <SignupPageErr />,
       },
       {
         path: 'signin',
@@ -36,7 +41,7 @@ const myRouter = createBrowserRouter([
       }
     ]
   }
-], { basename: "/DogFoodReactApp"})
+], {basename: "/DogFoodReactApp"})
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -50,7 +55,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
-      <RouterProvider router={myRouter} />
+      <AppContextProvider>
+          <RouterProvider router={myRouter} />
+        </AppContextProvider>
     </QueryClientProvider>
   </React.StrictMode>,
 )
