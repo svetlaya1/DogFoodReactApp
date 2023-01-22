@@ -36,7 +36,7 @@ const myRouter = createBrowserRouter([
       }
     ]
   }
-])
+], { basename: "/DogFoodReactApp"})
 
 const queryClient = new QueryClient({
   defaultOptions: {
