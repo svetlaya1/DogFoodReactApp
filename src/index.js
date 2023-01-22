@@ -6,9 +6,11 @@ import './index.css'
 import App from './App'
 import { createBrowserRouter, RouterProvider} from 'react-router-dom'
 import { Main } from './components/Main/Main'
-import { Goods } from './components/Pages/Goods/Goods'
 import { SignupPage } from './components/Pages/SignupPage/SignupPage'
 import { SigninPage } from './components/Pages/SigninPage/SigninPage'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { Goods } from './components/Pages/Goods/Goods'
+//import { SigninMemo as SigninPage } from './components/Pages/SigninPage/SigninPage';
 
 
 const myRouter = createBrowserRouter([
@@ -34,11 +36,21 @@ const myRouter = createBrowserRouter([
       }
     ]
   }
-], { basename: "/DogFoodReactApp" })
+])
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false, // default: true
+    },
+  },
+})
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
-    <RouterProvider router={myRouter} />
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={myRouter} />
+    </QueryClientProvider>
   </React.StrictMode>,
 )
