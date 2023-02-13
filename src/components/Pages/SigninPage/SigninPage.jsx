@@ -4,6 +4,7 @@ import signinStyles from './signinpage.module.css'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import { createTodoFormValidationSchema } from './validator'
 import { useMutation } from '@tanstack/react-query'
+<<<<<<< HEAD
 import { useNavigate } from 'react-router-dom'
 import { AppContext } from '../../../contexts/AppContextProvider';
 import React, { useContext } from 'react';
@@ -13,12 +14,27 @@ import { withQuery } from '../../HOCs/withQuery';
 const initialValues = {
     email: '',
     password: '',
+=======
+import { useNavigate } from 'react-router-dom';
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { Loader } from '../../Loader/Loader'
+import authSlice from '../../../store/auth'
+
+const initialValues = {
+  email: '',
+  password: '',
+>>>>>>> c3a691a (Добавлен redux, поиск и корзина)
 }
 
 export const SigninPage = () => {
   const navigate = useNavigate()
+<<<<<<< HEAD
 
   const { setToken } = useContext(AppContext)
+=======
+  const dispatch = useDispatch();
+>>>>>>> c3a691a (Добавлен redux, поиск и корзина)
 
   const { mutateAsync, isLoading, isError, error } = useMutation({
     mutationFn: (data) => {
@@ -45,7 +61,12 @@ export const SigninPage = () => {
         })
         .then((res) => res.json())
         .then((data) => {
+<<<<<<< HEAD
           setToken(data.token)
+=======
+          // setToken(data.token)
+          dispatch(authSlice.actions.setToken(data.token));
+>>>>>>> c3a691a (Добавлен redux, поиск и корзина)
         })
     },
   })
@@ -59,7 +80,11 @@ export const SigninPage = () => {
 
   if (isError) return <p>{error.message}</p>
   if (isLoading) return <Loader />
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> c3a691a (Добавлен redux, поиск и корзина)
   return (
     <Formik
       initialValues={initialValues}
@@ -72,7 +97,11 @@ export const SigninPage = () => {
 
         <Field className={signinStyles.input} name="password" placeholder="password here" type="text" />
         <ErrorMessage component="p" className="error" name="password" />
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> c3a691a (Добавлен redux, поиск и корзина)
         <button className={signinStyles.btn} type="submit">Sign in</button>
       </Form>
     </Formik>

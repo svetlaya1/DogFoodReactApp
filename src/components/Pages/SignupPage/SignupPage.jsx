@@ -9,9 +9,15 @@ import { SignupPageErr } from './SignupPageErr'
 
 
 const initialValues = {
+<<<<<<< HEAD
     email: '',
     group: 'sm9',
     password: '',
+=======
+  email: '',
+  group: 'sm9',
+  password: '',
+>>>>>>> c3a691a (Добавлен redux, поиск и корзина)
 }
 
 export function SignupPage() {
@@ -32,12 +38,18 @@ export function SignupPage() {
   })
 
   const submitHandler = async (values) => {
+<<<<<<< HEAD
     console.log({ values})
 
     await mutateAsync(values)
 
   }
   
+=======
+    await mutateAsync(values)
+  }
+
+>>>>>>> c3a691a (Добавлен redux, поиск и корзина)
   return (
     <Formik
       initialValues={initialValues}
@@ -47,16 +59,27 @@ export function SignupPage() {
       <Form className={signupStyles.form}>
         <Field className={signupStyles.input} name="email" placeholder="Email here" type="text" />
         <ErrorMessage component="p" className="error" name="email" />
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> c3a691a (Добавлен redux, поиск и корзина)
         <Field className={signupStyles.input} name="group" placeholder="group here" type="text" />
         <ErrorMessage component="p" className="error" name="group" />
 
         <Field className={signupStyles.input} name="password" placeholder="password here" type="text" />
         <ErrorMessage component="p" className="error" name="password" />
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> c3a691a (Добавлен redux, поиск и корзина)
         <button disabled={isLoading} className={signupStyles.btn} type="submit">Sign up</button>
       </Form>
     </Formik>
   )
 }
+<<<<<<< HEAD
   
+=======
+>>>>>>> c3a691a (Добавлен redux, поиск и корзина)

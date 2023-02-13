@@ -11,3 +11,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+<<<<<<< HEAD
+=======
+
+html, body, #root {
+  height: 100%;
+}
+>>>>>>> c3a691a (Добавлен redux, поиск и корзина)

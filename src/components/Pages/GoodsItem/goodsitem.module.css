@@ -26,7 +26,12 @@
     margin-top: 10px;
     border: none;
     padding: 10px 20px 26px;
+<<<<<<< HEAD
     font-weight: 700
+=======
+    font-weight: 700;
+    cursor: pointer;
+>>>>>>> c3a691a (Добавлен redux, поиск и корзина)
   }
   
   
@@ -43,6 +48,10 @@
   .blockBtn {
     display: flex;
     justify-content: center;
+<<<<<<< HEAD
     align-items: end;
+=======
+    align-items: flex-end;
+>>>>>>> c3a691a (Добавлен redux, поиск и корзина)
     gap: 10px;
   }

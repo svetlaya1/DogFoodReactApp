@@ -50,6 +50,28 @@
     height: 27px;
 }
 
+<<<<<<< HEAD
+=======
+.cart {
+    position: relative;
+}
+
+.cartCount {
+    position: absolute;
+    bottom: 0px;
+    right: -10px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #000;
+    font-size: 14px;
+    background: #fee54d;
+    width: 20px;
+    border-radius: 100%;
+    border: 1px solid #000;
+    line-height: 20px;
+}
+
+>>>>>>> c3a691a (Добавлен redux, поиск и корзина)
 .imgCart {
     width: 28px;
     height: 30px;
